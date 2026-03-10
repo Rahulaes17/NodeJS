@@ -19,3 +19,23 @@ const main = async () => {
 }
 
 main()
+
+
+function getUser() {
+    return new Promise(function (resolve) {
+        setTimeout(function () {
+            resolve("User data received");
+        }, 2000);
+    });
+}
+
+async function displayUser() {
+    console.log("Loading user...");
+
+    let result = await getUser();
+
+    console.log(result);
+    console.log("Task finished");
+}
+
+displayUser();
