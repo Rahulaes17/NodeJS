@@ -26,3 +26,16 @@ const func = () =>{
 }
 
 setTimeout(func , 1000)
+
+
+function greet(name, callback) {
+    console.log("Hello " + name);
+
+    callback();
+}
+
+function sayBye() {
+    console.log("Goodbye!");
+}
+
+greet("Rahul", sayBye);
