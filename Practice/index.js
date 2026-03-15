@@ -88,3 +88,39 @@ const server = http.createServer(function(req, res) {
 server.listen(3000, function() {
     console.log("Server running at http://localhost:3000");
 });
+
+
+
+function multiply(a, b) {
+    return new Promise((resolve, reject) => {
+        let result = a * b;
+
+        if (result) {
+            resolve(result);
+        } else {
+            reject("Error in multiplication");
+        }
+    });
+}
+
+multiply(4, 5)
+    .then(result => console.log("Multiply Result:", result))
+    .catch(err => console.log(err));
+
+
+
+fs.appendFile("sample.txt", "\nAppended text from NodeJS", function (err) {
+    if (err) {
+        console.log("Error appending file");
+    } else {
+        console.log("Content appended");
+    }
+});
+
+const os = require("os");
+
+console.log("Platform:", os.platform());
+console.log("CPU Architecture:", os.arch());
+console.log("Free Memory:", os.freemem());
+
+
